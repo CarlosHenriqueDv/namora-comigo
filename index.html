@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Namora comigo?!</title>
+        <link rel="shortcut icon" href="assets/css/images/favicon.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/main.css"/>
+		<link rel="stylesheet" href="assets/css/font-awesome-animation.min.css">
+
+		<style>
+			/* Add CSS to make the button movable */
+			#nao {
+				position: absolute;
+				cursor: pointer;
+			}
+		</style>
+
+	</head>
+	<body class="loading">
+		<!-- Música de Fundo -->
+        <audio id="background-music" src="assets/audio/PraVoceGuardeiAmor.mp3" controls autoplay loop></audio>
+
+		<script>	
+			function getRandomPosition(element) {
+				var rect = element.getBoundingClientRect();
+				var maxX = 500; // Limitamos o maxX para 500px
+				var maxY = 150; // Limitamos o maxY para 150px
+				var newX = Math.floor(Math.random() * (2 * maxX)) - maxX;
+				var newY = Math.floor(Math.random() * (2 * maxY)) - maxY;
+		
+				// Se o newY for maior que 0, geramos um novo valor até ser menor ou igual a 0
+				while (newY > 0) {
+					newY = Math.floor(Math.random() * (2 * maxY)) - maxY;
+				}
+		
+				// Se o newX for maior que 0, geramos um novo valor até ser menor ou igual a 0
+				while (newX > 0) {
+					newX = Math.floor(Math.random() * (2 * maxX)) - maxX;
+				}
+		
+				return [newX, newY];
+			}
+		
+			function moveButton(button) {
+				var newPosition = getRandomPosition(button);
+				button.style.left = newPosition[0] + 'px';
+				button.style.top = newPosition[1] + 'px';
+			}
+		</script>
+		
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+				<!-- Header -->
+				<header id="header">
+				    <h1>Namora comigo?</h1>
+					
+				    <p style="margin-top: 50px;">"Vem ser a a Lua da minha vida e deixa eu ser teu Sol e Estrelas"</p>
+				    
+				    <nav>
+				        <ul>
+				            <li><a href="login.html" class="icon fa-heart faa-pulse animated"><span class="label">heart</span></a></li>
+				            <li id="nao" onmouseover="moveButton(this)">
+								<a href="#" class="icon fa-times-circle"><span class="label">times</span></a>
+							</li>
+				        </ul>
+				    </nav>
+				</header>
+				<!-- Footer -->
+				<footer id="footer"><span class="icon fa-volume-up"><span class="label">volume-up</span></footer>
+            </div>
+		</div>
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+
+<script>
+			$(document).ready(function() {
+				// Ao clicar em qualquer lugar da página, iniciar a reprodução da música de fundo
+				$(document).one('click', function() {
+					$('#background-music').trigger('play');
+				});
+			});
+</script>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Me Namora?!</title>
+        <link rel="shortcut icon" href="assets/css/images/favicon.png">
+        <link href="login/css/style.css" rel='stylesheet' type='text/css'/>
+
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
+
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+ 
+
+
+        <!-- Sweet Alert -->
+        <script src="login/js/sweetalert.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="login/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="login/css/sweetalert.css">
+        <link rel="stylesheet" type="text/css" href="login/css/bootstrap.min.css">
+
+		<!-- Webfonts -->
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+
+		<!-- Login -->
+		<script language="JavaScript" src="login/js/meusol.js"></script>
+
+	</head>
+	<body>
+		<!-- Música de Fundo -->
+		<audio src="assets/audio/MeEncantou.mp3" controls autoplay loop></audio>
+		<script>
+		$(document).ready(function(c) {
+			$('.close').on('click', function(c){
+				$('.login-form').fadeOut('slow', function(c){
+	  				$('.login-form').remove();
+				});
+			});
+		});
+		</script>
+		<!-- Formulário de Login -->
+		<h1>&ensp;</h1>
+		<div class="login-form">
+            <div class="close"></div>
+			<div class="head-info">
+				<label class="lbl-1"></label>
+				<label class="lbl-2"></label>
+				<label class="lbl-3"></label>
+			</div>
+            <div class="clear"></div>
+			<div class="avtar"><img src="login/images/anny (1).png" /></div>
+			<form>
+				<input type="text" class="text" value="Nome" id="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nome';}" >
+				<div class="key"><input type="password" value="password" id="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
+			</form>
+			<div class="signin"><input type="submit" value="Eu aceito! &#10084;" id="submit" onclick="validate()" ></div>
+		</div>
+ 		<div class="copy-rights"><p></a> </p></div>
+	</body>
+</html>
